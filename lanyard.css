@@ -1,0 +1,65 @@
+/* 3D Lanyard Canvas Container */
+#lanyard-frame-wrap {
+  position: relative;
+  width: 100%;
+  height: 80vh; /* Sesuaikan tinggi sesuai instruksi */
+  background-color: transparent; /* Agar menyatu dengan tema */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lanyard-frame-wrap canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  cursor: grab;
+  position: relative;
+  z-index: 2;
+}
+
+#lanyard-frame-wrap canvas:active {
+  cursor: grabbing;
+}
+
+#brutalist-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleX(1.3) scaleY(2.2);
+  font-family: 'Bebas Neue', 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 20vw;
+  line-height: 0.75;
+  text-align: center;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.1);
+  text-transform: uppercase;
+  z-index: 1;
+  pointer-events: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* Hide placeholder dynamically */
+.lanyard-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Sesuai dengan desain loading */
+  z-index: 10;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.lanyard-placeholder.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
